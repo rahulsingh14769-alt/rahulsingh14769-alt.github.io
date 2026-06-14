@@ -5,9 +5,9 @@ import { ThemeToggle } from './ThemeToggle';
 
 const navLinks = [
   { path: '/', label: 'Home' },
-  { path: '/#/about', label: 'About' },
-  { path: '/#/work', label: 'Work' },
-  { path: '/#/contact', label: 'Contact' },
+  { path: '/about', label: 'About' },
+  { path: '/work', label: 'Work' },
+  { path: '/contact', label: 'Contact' },
 ];
 
 export function Navbar() {
@@ -16,9 +16,9 @@ export function Navbar() {
 
   const isActive = (path: string) => {
     if (path === '/') {
-      return location.hash === '' || location.hash === '#/';
+      return location.pathname === '/';
     }
-    return location.hash === path.replace('/#', '');
+    return location.pathname === path;
   };
 
   return (

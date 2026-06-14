@@ -16,9 +16,9 @@ function App() {
           <main className="flex-1 pt-16">
             <Routes>
               <Route path="/" element={<Hero />} />
-              <Route path="/#/about" element={<About />} />
-              <Route path="/#/work" element={<Work />} />
-              <Route path="/#/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
           <Footer />

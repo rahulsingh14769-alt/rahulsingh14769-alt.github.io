@@ -70,7 +70,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
           >
             <Link
-              to="/#/work"
+              to="/work"
               className="group flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <Layers className="w-5 h-5" />
@@ -78,7 +78,7 @@ export default function Hero() {
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </Link>
             <Link
-              to="/#/contact"
+              to="/contact"
               className="flex items-center gap-2 px-6 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200"
             >
               Contact Me
