@@ -6,6 +6,7 @@ import { ThemeToggle } from './ThemeToggle';
 const navLinks = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
+  { path: '/experience', label: 'Experience' },
   { path: '/work', label: 'Work' },
   { path: '/contact', label: 'Contact' },
 ];
@@ -49,7 +50,7 @@ export function Navbar() {
               </Link>
             ))}
             <a
-              href="/Resume.pdf"
+              href="/resume.pdf"
               download
               className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors duration-200"
             >
@@ -90,7 +91,7 @@ export function Navbar() {
                 </Link>
               ))}
               <a
-                href="/Resume.pdf"
+                href="/resume.pdf"
                 download
                 className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors duration-200 text-center"
               >

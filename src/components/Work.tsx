@@ -8,7 +8,7 @@ export default function Work() {
     <Section id="work" className="bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-6">
           <div className="p-2 rounded-lg bg-accent-500/10">
             <Briefcase className="w-6 h-6 text-accent-500" />
           </div>
