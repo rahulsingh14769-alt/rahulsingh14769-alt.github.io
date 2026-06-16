@@ -1,8 +1,13 @@
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { User, Rocket, GraduationCap } from 'lucide-react';
 import Section from './Section';
 import { aboutSection, education } from '../data/portfolioData';
 
 export default function About() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-100px' });
+
   return (
     <Section id="about" className="bg-slate-50/70 dark:bg-slate-900/50">
       <div className="max-w-4xl mx-auto px-4">
@@ -20,6 +25,35 @@ export default function About() {
             </p>
           </div>
         </div>
+
+        {/* Profile Visual */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="flex flex-col items-center mb-12"
+        >
+          {/* Rotating Gradient Ring */}
+          <div className="relative w-40 h-40 mb-6">
+            {/* Outer rotating ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: 'conic-gradient(from 0deg, #6366f1, #10b981, #a855f7, #6366f1)',
+                padding: '3px',
+              }}
+            >
+              <div className="w-full h-full rounded-full bg-slate-50 dark:bg-slate-900" />
+            </motion.div>
+            {/* Inner static ring */}
+            <div className="absolute inset-[14px] rounded-full bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+              <span className="text-3xl font-bold text-accent-500">RS</span>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Professional Summary */}
         <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/60 dark:border-slate-700/60 shadow-sm mb-12">
@@ -43,7 +77,7 @@ export default function About() {
           {aboutSection.skills.map((skill) => (
             <span
               key={skill}
-              className="px-4 py-2 bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium border border-slate-200/60 dark:border-slate-700/60 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-colors duration-200"
+              className="px-4 py-2 bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium border border-slate-200/60 dark:border-slate-700/60 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
             >
               {skill}
             </span>

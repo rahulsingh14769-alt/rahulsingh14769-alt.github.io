@@ -25,8 +25,42 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4">
-      <div className="max-w-4xl mx-auto text-center">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 relative overflow-hidden">
+      {/* Animated Gradient Blobs */}
+      <motion.div
+        animate={{
+          x: [0, 60, -40, 0],
+          y: [0, -40, 60, 0],
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-20 left-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          x: [0, -60, 40, 0],
+          y: [0, 40, -60, 0],
+        }}
+        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut', delay: 5 }}
+        className="absolute bottom-20 right-10 w-[28rem] h-[28rem] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          x: [0, 40, -60, 0],
+          y: [0, 60, -40, 0],
+        }}
+        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut', delay: 10 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[32rem] h-[32rem] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          x: [0, -30, 50, 0],
+          y: [0, 50, -30, 0],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+        className="absolute top-40 right-1/4 w-80 h-80 bg-amber-500/5 rounded-full blur-[80px] pointer-events-none"
+      />
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -85,10 +119,6 @@ export default function Hero() {
             </Link>
           </motion.div>
         </motion.div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-1/4 left-10 w-64 h-64 bg-accent-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
       </div>
     </div>
   );
